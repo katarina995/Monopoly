@@ -4,8 +4,9 @@
 
 #ifndef MONOPOLY_USERDB_H
 #define MONOPOLY_USERDB_H
-#include "Player.h"
+#include "Account.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -13,14 +14,21 @@ class UserDB {
 public:
     UserDB();
 
-    vector<Player*> getPlayers();
+    ~UserDB(){
+        for(auto pl:players)
+            delete pl;
+    }
 
-    void addPlayer(Player *pl);
+    vector<Account*> getPlayers();
+
+    void addPlayer(Account *pl);
 
     void setPlayers();
 
 private:
-    vector<Player*> players;
+    vector<Account*> players;
+
+    Account *getRandomAccount();
 };
 
 
