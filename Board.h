@@ -26,8 +26,6 @@ public:
 private:
     vector<Field*> fields;
 
-    vector<Player*> players;
-
     void initializeFields();
 
     vector<Street*> readingFromFile();

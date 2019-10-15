@@ -10,7 +10,8 @@ Board::Board(){
 }
 
 Board::~Board(){
-    delete this;
+   for(auto field: fields)
+       delete field;
 }
 
 void Board::initializeFields() {
