@@ -35,3 +35,9 @@ void MonopolyLogic::releaseFields(Player *player) {
         }
     }
 }
+
+MonopolyLogic::~MonopolyLogic() {
+    delete board;
+    for(auto player: players)
+        delete player;
+}

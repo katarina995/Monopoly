@@ -14,6 +14,8 @@ class MonopolyLogic {
 public:
     MonopolyLogic(Board* b,vector<Player*> p);
 
+    ~MonopolyLogic();
+
     Board* getBoard();
 
     vector<Player*> getPlayers();
