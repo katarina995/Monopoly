@@ -13,16 +13,16 @@ using namespace std;
 
 class StartGame {
 public:
-    StartGame(Player* _player,UserDB* _udb) : player(_player),udb(_udb){
-        udb->addPlayer(player);
-        cout<<"cao"<<endl;
-
+    StartGame(Player* player,UserDB* udb) : player_(player),udb_(udb){
+        udb->addPlayer(player_);
     }
+    
     vector<Player*> getWaitingPlayers();
+    
     MonopolyLogic* startSession(vector<Player*> players);
 private:
-    Player *player;
-    UserDB *udb;
+    Player *player_;
+    UserDB *udb_;
     MonopolyLogic *ml;
 
 };
