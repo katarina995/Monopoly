@@ -10,10 +10,11 @@
 
 class Move {
 public:
-    Move() {}
+    Move() = default;
 
     ~Move(){
-        delete this;
+        delete player;
+        delete ml;
     }
 
     string yourTurn();
