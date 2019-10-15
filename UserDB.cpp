@@ -7,8 +7,7 @@
 #include <utility>
 #include <algorithm>
 
-UserDB::UserDB()  {
-}
+UserDB::UserDB()  = default;
 
 vector<Account*> UserDB::getPlayers() {
     if( players.size() <= 4 && players.size() > 1 )
