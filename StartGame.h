@@ -14,12 +14,11 @@ using namespace std;
 
 class StartGame {
 public:
-    StartGame(Account* player,UserDB* udb) : player_(player),udb_(udb){
+    StartGame(Account player,UserDB* udb) : player_(player),udb_(udb){
         udb_->addPlayer(player);
     }
 
     ~StartGame(){
-        delete player_;
         delete udb_;
         delete ml;
     }
@@ -28,7 +27,7 @@ public:
 
     MonopolyLogic* startSession(vector<Player*> players);
 private:
-    Account *player_;
+    Account player_;
     UserDB *udb_;
     MonopolyLogic *ml;
 

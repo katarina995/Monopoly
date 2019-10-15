@@ -14,5 +14,11 @@ struct Account{
     }
     string name_;
     int id_;
+    bool operator==(Account rhs) {
+        return id_ == rhs.id_;
+    }
 };
+
+
+
 #endif //MONOPOLY_ACCOUNT_H

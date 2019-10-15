@@ -14,21 +14,18 @@ class UserDB {
 public:
     UserDB();
 
-    ~UserDB(){
-        for(auto pl:players)
-            delete pl;
-    }
+    ~UserDB() = default;
 
-    vector<Account*> getPlayers();
+    vector<Account> getPlayers();
 
-    void addPlayer(Account *pl);
+    void addPlayer(const Account& pl);
 
     void setPlayers();
 
 private:
-    vector<Account*> players;
+    vector<Account> players;
 
-    Account *getRandomAccount();
+    Account getRandomAccount();
 };
 
 

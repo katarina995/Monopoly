@@ -6,9 +6,9 @@
 
 vector<Player *> StartGame::getWaitingPlayers() {
     vector<Player*> result;
-    vector<Account*> accounts = udb_->getPlayers();
+    vector<Account> accounts = udb_->getPlayers();
     for(auto acc: accounts){
-        Player* player = new Player(acc->name_,acc->id_);
+        Player* player = new Player(acc.name_,acc.id_);
         result.push_back(player);
     }
     return result;

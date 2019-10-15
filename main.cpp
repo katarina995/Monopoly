@@ -14,7 +14,7 @@ int main() {
     cout << "Enter your name..." << endl;
     string name;
     getline(cin,name);
-    Account* ac = new Account(name);
+    Account ac(name);
     StartGame sg(ac,udb);
     vector<Player*> players = sg.getWaitingPlayers();
     MonopolyLogic* ml = sg.startSession(players);
