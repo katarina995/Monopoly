@@ -15,10 +15,10 @@ using namespace std;
 
 class Player {
 public:
-    Player(string _name);
+    Player(string name, int id);
 
     ~Player(){
-        delete this;
+        delete onStop;
     }
 
     int getId();
@@ -49,8 +49,8 @@ public:
 
 private:
     Field* onStop;
-    string name;
-    int id;
+    string name_;
+    int id_;
     float amountOfMoney = 30000;
     int currentPos = -1;
     friend bool operator== (Player lhs, Player rhs);

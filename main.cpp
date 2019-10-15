@@ -1,6 +1,7 @@
 #include <iostream>
 #include "StartGame.h"
 #include "Player.h"
+#include "Account.h"
 #include "UserDB.h"
 #include "Move.h"
 using namespace std;
@@ -13,8 +14,8 @@ int main() {
     cout << "Enter your name..." << endl;
     string name;
     getline(cin,name);
-    Player* pl = new Player(name);
-    StartGame sg(pl,udb);
+    Account* ac = new Account(name);
+    StartGame sg(ac,udb);
     vector<Player*> players = sg.getWaitingPlayers();
     MonopolyLogic* ml = sg.startSession(players);
     Move* mv = new Move();

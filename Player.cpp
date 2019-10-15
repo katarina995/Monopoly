@@ -6,11 +6,11 @@
 #include "Player.h"
 
 int Player::getId(){
-    return id;
+    return id_;
 }
 
 string Player::getName(){
-    return name;
+    return name_;
 }
 
 float Player::getAmountOfMoney() {
@@ -29,8 +29,7 @@ void Player::setCurrentPos(int currentPos) {
     Player::currentPos = currentPos;
 }
 
-Player::Player(string _name) : name(std::move(std::move(_name))) {
-    id = rand()%20+1;
+Player::Player(string name, int id) : name_(std::move(name)), id_(id) {
 }
 
 int Player::onTurn() {

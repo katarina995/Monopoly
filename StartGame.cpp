@@ -5,7 +5,13 @@
 #include "StartGame.h"
 
 vector<Player *> StartGame::getWaitingPlayers() {
-    return udb_->getPlayers();
+    vector<Player*> result;
+    vector<Account*> accounts = udb_->getPlayers();
+    for(auto acc: accounts){
+        Player* player = new Player(acc->name_,acc->id_);
+        result.push_back(player);
+    }
+    return result;
 }
 
 MonopolyLogic *StartGame::startSession(vector<Player*> players) {
